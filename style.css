@@ -1,0 +1,215 @@
+:root {
+    --primary-color: #000000;
+    --primary-hover: #000000;
+    --dark-btn-color: #1e88e5;
+    --dark-btn-hover: #1565c0;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --light-bg: #ffffff;
+    --light-text: #333333;
+    --dark-bg: #1a1a1a;
+    --dark-text: #e0e0e0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+  }
+  
+  #bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 60px;
+    min-height: calc(100vh - 120px);
+  }
+  
+  #questionBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 400px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+  }
+  
+  #outputBox {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 400px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+  }
+  
+  .dark-mode #questionBox,
+  .dark-mode #outputBox,
+  .dark-mode .playlist-panel {
+    background: rgba(26, 26, 26, 0.85);
+    color: var(--dark-text);
+    box-shadow: none;
+    border: 1px solid #333;
+  }
+  
+  h2, h3 {
+    margin: 0 0 15px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  button:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .dark-mode button {
+    background-color: var(--dark-btn-color);
+    color: #fff;
+  }
+  
+  .dark-mode button:hover {
+    background-color: var(--dark-btn-hover);
+  }
+  
+  #profilePreview {
+    max-width: 150px;
+    border-radius: 50%;
+    margin: 10px auto;
+    display: none;
+  }
+  
+  .playlist-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    box-shadow: var(--box-shadow);
+    width: 300px;
+    transition: transform 0.3s ease;
+  }
+  
+  .playlist-panel.collapsed {
+    transform: translateX(calc(100% + 20px));
+  }
+  
+  .playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .video-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .video-item:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+  }
+  
+  .video-item.active {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+  
+  .toggle-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none;
+  }
+  
+  .dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dark-mode-toggle:hover {
+    background: var(--primary-hover);
+  }

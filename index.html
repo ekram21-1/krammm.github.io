@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Info</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <video autoplay muted loop playsinline preload="auto" id="bgVideo" src="sample.mp4">
+        Your browser does not support video.
+    </video>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <div class="container">
+        <div id="questionBox">
+            <h2>Personal Information Form</h2>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required />
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" required min="0" max="150" />
+            </div>
+            <div class="form-group">
+                <label for="hobbies">Hobbies (comma separated)</label>
+                <input type="text" id="hobbies" required />
+            </div>
+            <div class="form-group">
+                <label for="favoriteNumber">Favorite Number</label>
+                <input type="number" id="favoriteNumber" required />
+            </div>
+            <div class="form-group">
+                <label for="goal">Goal</label>
+                <input type="text" id="goal" required />
+            </div>
+            <div class="form-group">
+                <label for="profilePic">Profile Picture</label>
+                <input type="file" id="profilePic" accept="image/*" onchange="previewImage(event)" />
+            </div>
+            <img id="profilePreview" alt="Profile Preview" />
+            <button type="button" onclick="printInfo()">Submit</button>
+        </div>
+
+        <div id="outputBox">
+            <h3>Your Information</h3>
+            <div id="output"></div>
+            <button type="button" onclick="downloadPDF()">Download PDF</button>
+        </div>
+    </div>
+
+    <button class="toggle-button" onclick="togglePlaylist()">Open Playlist</button>
+
+    <div class="playlist-panel">
+        <div class="playlist-header">
+            <h3 style="margin: 0;">Video Playlist</h3>
+            <button onclick="togglePlaylist()">Close</button>
+        </div>
+        <div class="video-list">
+            <div class="video-item active" onclick="changeVideo('vid1.mp4', this)">
+                Video 1
+            </div>
+            <div class="video-item" onclick="changeVideo('vid2.mp4', this)">
+                Video 2
+            </div>
+            <div class="video-item" onclick="changeVideo('vid3.mp4', this)">
+                Video 3
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
